@@ -1,1 +1,37 @@
-index.html
+<!DOCTYPE html>  <html>  
+<head>  
+    <title>Water Quality App</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+</head>  
+<body>  <div class="card">  
+    <h1>💧 Water Quality Checker</h1>  <form method="POST">  
+    <label>Water Color</label>  
+    <select name="color">  
+        <option value="low">Clear</option>  
+        <option value="medium">Slightly Colored</option>  
+        <option value="high">Dark / Dirty</option>  
+    </select>  
+
+    <label>Smell</label>  
+    <select name="smell">  
+        <option value="low">No Smell</option>  
+        <option value="medium">Unusual</option>  
+        <option value="high">Strong / Foul</option>  
+    </select>  
+
+    <label>Clarity</label>  
+    <select name="clarity">  
+        <option value="high">Clear</option>  
+        <option value="medium">Cloudy</option>  
+        <option value="low">Very Cloudy</option>  
+    </select>  
+
+    <button type="submit">Analyze Water</button>  
+</form>  
+
+{% if result %}  
+<div class="result">{{ result }}</div>  
+{% endif %}
+
+</div>  </body>  
+</html>
