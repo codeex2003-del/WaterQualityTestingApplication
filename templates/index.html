@@ -6,42 +6,59 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<div class="card">
-    <h1>💧 Water Quality Checker</h1>
-    <form method="POST">
-        <label>Water Color</label>
-        <select name="color">
-            <option value="low">Clear</option>
-            <option value="medium">Slightly Colored</option>
-            <option value="high">Dark / Dirty</option>
-        </select>
+<div class="container">
+    <div class="card">
+        <h1>💧 Water Quality Checker</h1>
+        <form method="POST">
+            <label>Water Color</label>
+            <select name="color">
+                <option value="low">Clear</option>
+                <option value="medium">Slightly Colored</option>
+                <option value="high">Dark / Dirty</option>
+            </select>
 
-        <label>Smell</label>
-        <select name="smell">
-            <option value="low">No Smell</option>
-            <option value="medium">Unusual</option>
-            <option value="high">Strong / Foul</option>
-        </select>
+            <label>Smell</label>
+            <select name="smell">
+                <option value="low">No Smell</option>
+                <option value="medium">Unusual</option>
+                <option value="high">Strong / Foul</option>
+            </select>
 
-        <label>Clarity</label>
-        <select name="clarity">
-            <option value="high">Clear</option>
-            <option value="medium">Cloudy</option>
-            <option value="low">Very Cloudy</option>
-        </select>
+            <label>Clarity</label>
+            <select name="clarity">
+                <option value="high">Clear</option>
+                <option value="medium">Cloudy</option>
+                <option value="low">Very Cloudy</option>
+            </select>
 
-        <button type="submit">Analyze Water</button>
-    </form>
+            <button type="submit">Analyze Water</button>
+        </form>
 
-    {% if result %}
-    <div class="result">
-        <p><strong>Water Color:</strong> {{ result.color }}</p>
-        <p><strong>Smell:</strong> {{ result.smell }}</p>
-        <p><strong>Clarity:</strong> {{ result.clarity }}</p>
-        <p><strong>Level:</strong> {{ result.level }}</p>
-        <p><strong>Suggestion:</strong> {{ result.suggestion }}</p>
+        {% if result %}
+        <div class="result-card">
+            <div class="result-row">
+                <span class="label">Water Color:</span>
+                <span class="value">{{ result.color }}</span>
+            </div>
+            <div class="result-row">
+                <span class="label">Smell:</span>
+                <span class="value">{{ result.smell }}</span>
+            </div>
+            <div class="result-row">
+                <span class="label">Clarity:</span>
+                <span class="value">{{ result.clarity }}</span>
+            </div>
+            <div class="result-row">
+                <span class="label">Level:</span>
+                <span class="value">{{ result.level }}</span>
+            </div>
+            <div class="result-row">
+                <span class="label">Suggestion:</span>
+                <span class="value">{{ result.suggestion }}</span>
+            </div>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </div>
 </body>
-    </html>
+                </html>
