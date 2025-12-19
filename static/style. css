@@ -1,55 +1,60 @@
 body {
     font-family: Arial, sans-serif;
-    background: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .card {
-    background: white;
-    padding: 30px;
+    width: 95%;            /* Almost full width on mobile */
+    max-width: 500px;      /* Limit width on larger screens */
+    margin: 20px 0;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     border-radius: 12px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-    width: 300px;
-    text-align: center;
 }
 
 h1 {
-    margin-bottom: 20px;
+    color: #1e90ff;
+    font-size: 2em;        /* Large title */
+    margin-bottom: 15px;
 }
 
-label {
+form label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
     font-weight: bold;
+    font-size: 1.2em;      /* Larger labels */
+    margin: 12px 0 6px;
+    text-align: left;
 }
 
-select {
+form select, form button {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
+    font-size: 1.2em;      /* Larger options and buttons */
+    margin-bottom: 12px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px 15px;
-    background: #00acc1;
+    background: #1e90ff;
     color: white;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background: #00838f;
+    background: #0077cc;
 }
 
 .result {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
+    margin-top: 15px;
+    font-size: 1.3em;      /* Bigger result text */
+    line-height: 1.5;
+    text-align: left;
 }
